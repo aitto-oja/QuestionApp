@@ -2,6 +2,15 @@ let score = 0;
 let questionNumber = 0;
 let questionCount = 0;
 
+function showAlert(message) {
+    document.getElementById('alertMessage').textContent = message;
+    document.getElementById('customAlert').classList.remove('hidden');
+}
+
+function closeAlert() {
+    document.getElementById('customAlert').classList.add('hidden');
+}
+
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
@@ -13,10 +22,13 @@ fetch('data.json')
             document.getElementById('optionC'),
             document.getElementById('optionD')
         ];
+        const progressElement = document.getElementById('progress');
+        progressElement.textContent = 'Progress: ' + questionNumber + '/5     Score: ' + score;
 
         const startBtnElement = document.getElementById('startBtn');
         startBtnElement.onclick = () => {
             loadQuestion(questionNumber);
+            document.getElementById('progress').classList.remove('hidden');
         }
 
         function loadQuestion(index) {
@@ -27,18 +39,19 @@ fetch('data.json')
                 button.onclick = () => {
                     if (index === questionData.correctIndex) {
                         score++;
-                        alert('Correct!');
+                        showAlert('Correct!');
                     } else {
-                        alert('Incorrect. Try again!');
+                        showAlert('Incorrect. Try again!');
                     }
                     questionCount++;
+                    document.getElementById('progress').textContent = 'Progress: ' + questionCount + '/5     Score: ' + score;
                     if (questionCount < 5) {
                         const questionAmount = questions.length;
                         const nNewQuestion = Math.floor(Math.random() * questionAmount);
                         loadQuestion(nNewQuestion);
                     } else {
-                        questionElement.textContent = 'Quiz completed! Your score: ' + score + '/' + questionCount;
-                        buttons.forEach(button => button.style.display = 'none');
+                        showAlert('Quiz completed! Your score: ' + score + '/' + questionCount);
+                        document.getElementById('nextBtn').disabled = true;
                     }
 
                 };

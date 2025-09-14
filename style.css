@@ -63,3 +63,48 @@ h1 {
 #startBtn {
     background-color: #4CAF50;
 }
+
+#score {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#nextBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 18px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.custom-alert button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
