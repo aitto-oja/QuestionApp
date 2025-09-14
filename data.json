@@ -1,0 +1,9 @@
+{
+    "questions": [
+        {
+            "question": "What is 4 * 5?",
+            "options": ["20", "9", "25", "16"],
+            "correctIndex": 0
+        }
+    ]
+}
