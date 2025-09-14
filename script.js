@@ -1,7 +1,9 @@
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        const questionData = data.questions[0];
+        let nQuestions = data.questions.length;
+        const n = Math.floor(Math.random() * nQuestions);
+        const questionData = data.questions[n];
         document.getElementById('question').textContent = questionData.question;
         const buttons = [
             document.getElementById('optionA'),
