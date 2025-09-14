@@ -2,12 +2,62 @@
     "questions": [
         {
             "question": "What is 4 * 5?",
-            "options": ["20", "9", "25", "16"],
+            "options": [
+                "20",
+                "9",
+                "25",
+                "16"
+            ],
             "correctIndex": 0
-        }, 
+        },
         {
-            "question": "What is n*m?", 
-            "options": ["1", "2", "3", "4"], 
+            "question": "What is n*m?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "question": "What is n1*m1?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "question": "What is n2*m2?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "question": "What is n3*m3?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "correctIndex": 2
+        },
+        {
+            "question": "What is n4*m4?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
             "correctIndex": 2
         }
     ]
