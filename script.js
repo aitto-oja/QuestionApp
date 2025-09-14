@@ -1,10 +1,12 @@
+let score = 0;
+let questionNumber = 0;
+let questionCount = 0;
+
 fetch('data.json')
     .then(response => response.json())
     .then(data => {
-        let nQuestions = data.questions.length;
-        const n = Math.floor(Math.random() * nQuestions);
-        const questionData = data.questions[n];
-        document.getElementById('question').textContent = questionData.question;
+        const questions = data.questions;
+        const questionElement = document.getElementById('question');
         const buttons = [
             document.getElementById('optionA'),
             document.getElementById('optionB'),
@@ -12,14 +14,36 @@ fetch('data.json')
             document.getElementById('optionD')
         ];
 
-        buttons.forEach((button, index) => {
-            button.textContent = "(" + String.fromCharCode(65 + index) + ") " + questionData.options[index];
-            button.onclick = () => {
-                if (index === questionData.correctIndex) {
-                    alert("Correct!");
-                } else {
-                    alert("Incorrect. Try again!");
-                }
-            };
-        });
+        const startBtnElement = document.getElementById('startBtn');
+        startBtnElement.onclick = () => {
+            loadQuestion(questionNumber);
+        }
+
+        function loadQuestion(index) {
+            const questionData = questions[index];
+            questionElement.textContent = questionData.question;
+            buttons.forEach((button, index) => {
+                button.textContent = '(' + String.fromCharCode(65 + index) + ') ' + questionData.options[index];
+                button.onclick = () => {
+                    if (index === questionData.correctIndex) {
+                        score++;
+                        alert('Correct!');
+                    } else {
+                        alert('Incorrect. Try again!');
+                    }
+                    questionCount++;
+                    if (questionCount < 5) {
+                        const questionAmount = questions.length;
+                        const nNewQuestion = Math.floor(Math.random() * questionAmount);
+                        loadQuestion(nNewQuestion);
+                    } else {
+                        questionElement.textContent = 'Quiz completed! Your score: ' + score + '/' + questionCount;
+                        buttons.forEach(button => button.style.display = 'none');
+                    }
+
+                };
+            });
+        };
+
+
     });

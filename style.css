@@ -12,7 +12,7 @@ body {
     background-color: white;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -35,7 +35,31 @@ h1 {
     color: white;
 }
 
-#optionA { background-color: #4CAF50; }
-#optionB { background-color: #2196F3; }
-#optionC { background-color: #FF9800; }
-#optionD { background-color: #f44336; }
+.start {
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+#optionA {
+    background-color: aqua;
+}
+
+#optionB {
+    background-color: #2196F3;
+}
+
+#optionC {
+    background-color: #FF9800;
+}
+
+#optionD {
+    background-color: #f44336;
+}
+
+#startBtn {
+    background-color: #4CAF50;
+}
