@@ -4,6 +4,11 @@
             "question": "What is 4 * 5?",
             "options": ["20", "9", "25", "16"],
             "correctIndex": 0
+        }, 
+        {
+            "question": "What is n*m?", 
+            "options": ["1", "2", "3", "4"], 
+            "correctIndex": 2
         }
     ]
 }
